@@ -7,3 +7,814 @@ public class EvenPositionElements {
     }
   }
 }
+1.
+public class FirstHalfReverse {
+    public static void main(String[] args) {
+        // Example array
+        int[] arr = {1, 2, 3, 4, 5, 6, 7, 8};
+        
+        // Calculate the midpoint (first half of the array)
+        int midpoint = arr.length / 2;
+        
+        // Print the first half of the array in reverse order
+        System.out.println("First half of the array in reverse order:");
+        for (int i = midpoint - 1; i >= 0; i--) {
+            System.out.print(arr[i] + " ");
+        }
+    }
+}
+2
+public class SecondHalfReverse {
+    public static void main(String[] args) {
+        // Example array
+        int[] arr = {1, 2, 3, 4, 5, 6, 7, 8};
+        
+        // Calculate the midpoint
+        int midpoint = arr.length / 2;
+        
+        // Print the second half of the array in reverse order
+        System.out.println("Second half of the array in reverse order:");
+        for (int i = arr.length - 1; i >= midpoint; i--) {
+            System.out.print(arr[i] + " ");
+        }
+    }
+}
+3
+public class EvenPositionsReverse {
+    public static void main(String[] args) {
+        // Example array
+        int[] arr = {1, 2, 3, 4, 5, 6, 7, 8};
+        
+        // Print elements at even positions in reverse order
+        System.out.println("Even positions in reverse order:");
+        for (int i = (arr.length % 2 == 0 ? arr.length - 2 : arr.length - 1); i >= 0; i -= 2) {
+            System.out.print(arr[i] + " ");
+        }
+    }
+}
+4
+public class OddPositionsReverse {
+    public static void main(String[] args) {
+        // Example array
+        int[] arr = {1, 2, 3, 4, 5, 6, 7, 8};
+        
+        // Print elements at odd positions in reverse order
+        System.out.println("Odd positions in reverse order:");
+        for (int i = arr.length - 2; i >= 0; i -= 2) {
+            System.out.print(arr[i] + " ");
+        }
+    }
+}
+5
+public class FirstAndLastElement {
+    public static void main(String[] args) {
+        // Example array
+        int[] array = {10, 20, 30, 40, 50};
+
+        // Check if the array is empty
+        if (array.length == 0) {
+            System.out.println("The array is empty.");
+        } else {
+            // Print the first and last elements
+            System.out.println("First element: " + array[0]);
+            System.out.println("Last element: " + array[array.length - 1]);
+        }
+    }
+}
+6
+
+public class MiddleElement {
+    public static void main(String[] args) {
+        // Example arrays
+        int[] oddArray = {10, 20, 30, 40, 50};
+        int[] evenArray = {10, 20, 30, 40};
+
+        // Find and print the middle element(s)
+        System.out.println("Odd-sized array:");
+        printMiddle(oddArray);
+
+        System.out.println("\nEven-sized array:");
+        printMiddle(evenArray);
+    }
+
+    public static void printMiddle(int[] array) {
+        if (array.length == 0) {
+            System.out.println("The array is empty.");
+        } else if (array.length % 2 == 1) {
+            // Odd length: One middle element
+            int middleIndex = array.length / 2;
+            System.out.println("Middle element: " + array[middleIndex]);
+        } else {
+            // Even length: Two middle elements
+            int firstMiddleIndex = (array.length / 2) - 1;
+            int secondMiddleIndex = array.length / 2;
+            System.out.println("Middle elements: " + array[firstMiddleIndex] + " and " + array[secondMiddleIndex]);
+        }
+    }
+}
+7
+public class ArraySum {
+    public static void main(String[] args) {
+        // Example array
+        int[] array = {10, 20, 30, 40, 50};
+
+        // Calculate the sum
+        int sum = 0;
+        for (int num : array) {
+            sum += num;
+        }
+
+        // Print the result
+        System.out.println("The sum of the array is: " + sum);
+    }
+}
+8
+public class SumAndAverage {
+    public static void main(String[] args) {
+        // Example array
+        int[] array = {10, 20, 30, 40, 50};
+
+        // Variables to hold the sum and average
+        int sum = 0;
+        double average = 0;
+
+        // Calculate the sum
+        for (int num : array) {
+            sum += num;
+        }
+
+        // Calculate the average
+        if (array.length > 0) {
+            average = (double) sum / array.length; // Cast to double for accurate division
+        }
+
+        // Print the results
+        System.out.println("The sum of the array is: " + sum);
+        System.out.println("The average of the array is: " + average);
+    }
+}
+9
+public class RightSumAndAverage {
+    public static void main(String[] args) {
+        // Example array
+        int[] array = {10, 20, 30, 40, 50};
+
+        // Calculate the sum and average
+        int sum = calculateSum(array);
+        double average = calculateAverage(array);
+
+        // Print the results
+        System.out.println("The sum of the array is: " + sum);
+        System.out.println("The average of the array is: " + average);
+    }
+
+    // Method to calculate the sum of the array
+    public static int calculateSum(int[] array) {
+        int sum = 0;
+        for (int num : array) {
+            sum += num;
+        }
+        return sum;
+    }
+
+    // Method to calculate the average of the array
+    public static double calculateAverage(int[] array) {
+        if (array.length == 0) {
+            return 0; // Return 0 if the array is empty to avoid division by zero
+        }
+        int sum = calculateSum(array);
+        return (double) sum / array.length; // Cast to double for accurate division
+    }
+}
+10
+public class LeftHalfSumAndAverage {
+    public static void main(String[] args) {
+        // Example array
+        int[] array = {10, 20, 30, 40, 50};
+
+        // Calculate the sum and average of the left (first half) array
+        int[] leftHalf = getLeftHalf(array);
+        int sum = calculateSum(leftHalf);
+        double average = calculateAverage(leftHalf);
+
+        // Print the results
+        System.out.println("Left half of the array: ");
+        for (int num : leftHalf) {
+            System.out.print(num + " ");
+        }
+        System.out.println("\nSum of the left half: " + sum);
+        System.out.println("Average of the left half: " + average);
+    }
+
+    // Method to extract the left (first half) of the array
+    public static int[] getLeftHalf(int[] array) {
+        int length = (array.length + 1) / 2; // Length of the first half
+        int[] leftHalf = new int[length];
+        for (int i = 0; i < length; i++) {
+            leftHalf[i] = array[i];
+        }
+        return leftHalf;
+    }
+
+    // Method to calculate the sum of an array
+    public static int calculateSum(int[] array) {
+        int sum = 0;
+        for (int num : array) {
+            sum += num;
+        }
+        return sum;
+    }
+
+    // Method to calculate the average of an array
+    public static double calculateAverage(int[] array) {
+        if (array.length == 0) {
+            return 0; // Return 0 if the array is empty to avoid division by zero
+        }
+        int sum = calculateSum(array);
+        return (double) sum / array.length; // Cast to double for accurate division
+    }
+}
+11
+public class FindMinimum {
+    public static void main(String[] args) {
+        // Example array
+        int[] array = {10, 20, 5, 30, 40};
+
+        // Find the minimum number in the array
+        int min = findMinimum(array);
+
+        // Print the result
+        System.out.println("The minimum number in the array is: " + min);
+    }
+
+    // Method to find the minimum number in the array
+    public static int findMinimum(int[] array) {
+        if (array.length == 0) {
+            throw new IllegalArgumentException("Array is empty.");
+        }
+
+        int min = array[0]; // Assume the first element is the minimum
+        for (int num : array) {
+            if (num < min) {
+                min = num; // Update min if a smaller number is found
+            }
+        }
+        return min;
+    }
+}
+12
+public class FindMaximum {
+    public static void main(String[] args) {
+        // Example array
+        int[] array = {10, 20, 5, 30, 40};
+
+        // Find the maximum number in the array
+        int max = findMaximum(array);
+
+        // Print the result
+        System.out.println("The maximum number in the array is: " + max);
+    }
+
+    // Method to find the maximum number in the array
+    public static int findMaximum(int[] array) {
+        if (array.length == 0) {
+            throw new IllegalArgumentException("Array is empty.");
+        }
+
+        int max = array[0]; // Assume the first element is the maximum
+        for (int num : array) {
+            if (num > max) {
+                max = num; // Update max if a larger number is found
+            }
+        }
+        return max;
+    }
+}
+13
+
+public class ReplaceElement {
+    public static void main(String[] args) {
+        // Example array
+        int[] array = {10, 20, 30, 40, 50};
+
+        // Display the original array
+        System.out.println("Original array:");
+        printArray(array);
+
+        // Get the index and new value from the user
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter the index of the element to replace (0 to " + (array.length - 1) + "): ");
+        int index = scanner.nextInt();
+        System.out.print("Enter the new value: ");
+        int newValue = scanner.nextInt();
+
+        // Replace the element
+        if (index >= 0 && index < array.length) {
+            array[index] = newValue;
+            System.out.println("Updated array:");
+            printArray(array);
+        } else {
+            System.out.println("Invalid index. No changes made.");
+        }
+
+        scanner.close();
+    }
+
+    // Helper method to print the array
+    public static void printArray(int[] array) {
+        for (int num : array) {
+            System.out.print(num + " ");
+        }
+        System.out.println();
+    }
+}
+14
+
+public class SwapArrayElements {
+    public static void main(String[] args) {
+        // Example array
+        int[] array = {10, 20, 30, 40, 50};
+
+        // Display the original array
+        System.out.println("Original array:");
+        printArray(array);
+
+        // Get the indices to swap from the user
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter the index of the first element to swap (0 to " + (array.length - 1) + "): ");
+        int index1 = scanner.nextInt();
+        System.out.print("Enter the index of the second element to swap (0 to " + (array.length - 1) + "): ");
+        int index2 = scanner.nextInt();
+
+        // Swap the elements
+        if (index1 >= 0 && index1 < array.length && index2 >= 0 && index2 < array.length) {
+            swapElements(array, index1, index2);
+            System.out.println("Updated array after swap:");
+            printArray(array);
+        } else {
+            System.out.println("Invalid indices. No changes made.");
+        }
+
+        scanner.close();
+    }
+
+    // Method to swap two elements in the array
+    public static void swapElements(int[] array, int index1, int index2) {
+        int temp = array[index1];
+        array[index1] = array[index2];
+        array[index2] = temp;
+    }
+
+    // Helper method to print the array
+    public static void printArray(int[] array) {
+        for (int num : array) {
+            System.out.print(num + " ");
+        }
+        System.out.println();
+    }
+}
+15
+import java.util.Scanner;
+
+public class ReadArrayFromKeyboard {
+    public static void main(String[] args) {
+        // Create a Scanner object to read input
+        Scanner scanner = new Scanner(System.in);
+
+        // Read the size of the array
+        System.out.print("Enter the size of the array: ");
+        int size = scanner.nextInt();
+
+        // Create an array of the specified size
+        int[] array = new int[size];
+
+        // Read the array elements from the user
+        System.out.println("Enter " + size + " elements of the array:");
+        for (int i = 0; i < size; i++) {
+            System.out.print("Element " + (i + 1) + ": ");
+            array[i] = scanner.nextInt();
+        }
+
+        // Display the array
+        System.out.println("The array you entered is:");
+        printArray(array);
+
+        // Close the scanner
+        scanner.close();
+    }
+
+    // Method to print the array
+    public static void printArray(int[] array) {
+        for (int num : array) {
+            System.out.print(num + " ");
+        }
+        System.out.println();
+    }
+}
+16
+public class InitializeArray {
+    public static void main(String[] args) {
+        // Initialize the array with values at the time of declaration
+        int[] array = {10, 20, 30, 40, 50};
+
+        // Display the array
+        System.out.println("The array is:");
+        printArray(array);
+    }
+
+    // Method to print the array
+    public static void printArray(int[] array) {
+        for (int num : array) {
+            System.out.print(num + " ");
+        }
+        System.out.println();
+    }
+}
+17
+public class LargestElementInArray {
+    public static void main(String[] args) {
+        // Example array
+        int[] array = {10, 20, 30, 40, 50};
+
+        // Find the largest element in the array
+        int largest = findLargest(array);
+
+        // Print the largest element
+        System.out.println("The largest element in the array is: " + largest);
+    }
+
+    // Method to find the largest element in the array
+    public static int findLargest(int[] array) {
+        if (array.length == 0) {
+            throw new IllegalArgumentException("Array is empty.");
+        }
+
+        int largest = array[0]; // Assume the first element is the largest
+        for (int num : array) {
+            if (num > largest) {
+                largest = num; // Update largest if a larger element is found
+            }
+        }
+        return largest;
+    }
+}
+18
+public class SmallestElementInArray {
+    public static void main(String[] args) {
+        // Example array
+        int[] array = {10, 20, 5, 30, 40};
+
+        // Find the smallest element in the array
+        int smallest = findSmallest(array);
+
+        // Print the smallest element
+        System.out.println("The smallest element in the array is: " + smallest);
+    }
+
+    // Method to find the smallest element in the array
+    public static int findSmallest(int[] array) {
+        if (array.length == 0) {
+            throw new IllegalArgumentException("Array is empty.");
+        }
+
+        int smallest = array[0]; // Assume the first element is the smallest
+        for (int num : array) {
+            if (num < smallest) {
+                smallest = num; // Update smallest if a smaller element is found
+            }
+        }
+        return smallest;
+    }
+}
+19
+
+public class CountOccurrences {
+    public static void main(String[] args) {
+        // Example array
+        int[] array = {10, 20, 10, 30, 20, 20, 40};
+
+        // Count the occurrences of each element
+        countOccurrences(array);
+    }
+
+    // Method to count the occurrences of each element in the array
+    public static void countOccurrences(int[] array) {
+        // Using a HashMap to store the frequency of each element
+        Map<Integer, Integer> frequencyMap = new HashMap<>();
+
+        // Loop through the array and count occurrences
+        for (int num : array) {
+            frequencyMap.put(num, frequencyMap.getOrDefault(num, 0) + 1);
+        }
+
+        // Display the frequency of each element
+        System.out.println("Element occurrences in the array:");
+        for (Map.Entry<Integer, Integer> entry : frequencyMap.entrySet()) {
+            System.out.println("Element: " + entry.getKey() + " - Occurrences: " + entry.getValue());
+        }
+    }
+}
+20
+public class CheckArraySorted {
+    public static void main(String[] args) {
+        // Example arrays
+        int[] ascendingArray = {10, 20, 30, 40, 50};
+        int[] descendingArray = {50, 40, 30, 20, 10};
+        int[] unsortedArray = {10, 30, 20, 40, 50};
+
+        // Check if arrays are sorted
+        System.out.println("Is the ascending array sorted? " + isSorted(ascendingArray));
+        System.out.println("Is the descending array sorted? " + isSorted(descendingArray));
+        System.out.println("Is the unsorted array sorted? " + isSorted(unsortedArray));
+    }
+
+    // Method to check if the array is sorted (in ascending or descending order)
+    public static boolean isSorted(int[] array) {
+        // Check if array is empty or has only one element
+        if (array.length <= 1) {
+            return true;
+        }
+
+        boolean isAscending = true;  // Assume array is sorted in ascending order
+        boolean isDescending = true; // Assume array is sorted in descending order
+
+        // Loop through the array to check both conditions
+        for (int i = 0; i < array.length - 1; i++) {
+            if (array[i] > array[i + 1]) {
+                isAscending = false;  // Array is not sorted in ascending order
+            }
+            if (array[i] < array[i + 1]) {
+                isDescending = false; // Array is not sorted in descending order
+            }
+        }
+
+        // Return true if the array is either ascending or descending
+        return isAscending || isDescending;
+    }
+}
+21
+import java.util.Arrays;
+
+public class MergeTwoArrays {
+    public static void main(String[] args) {
+        // Example arrays
+        int[] array1 = {1, 2, 3, 4};
+        int[] array2 = {5, 6, 7, 8};
+
+        // Merge the arrays
+        int[] mergedArray = mergeArrays(array1, array2);
+
+        // Print the merged array
+        System.out.println("Merged array: " + Arrays.toString(mergedArray));
+    }
+
+    // Method to merge two arrays
+    public static int[] mergeArrays(int[] array1, int[] array2) {
+        // Create a new array to hold the merged result
+        int[] mergedArray = new int[array1.length + array2.length];
+
+        // Copy elements from the first array to the merged array
+        System.arraycopy(array1, 0, mergedArray, 0, array1.length);
+
+        // Copy elements from the second array to the merged array
+        System.arraycopy(array2, 0, mergedArray, array1.length, array2.length);
+
+        return mergedArray;
+    }
+}
+22
+
+public class RemoveDuplicates {
+    public static void main(String[] args) {
+        // Example array with duplicates
+        int[] array = {10, 20, 30, 20, 40, 50, 30, 60, 10};
+
+        // Remove duplicates while maintaining the original order
+        int[] uniqueArray = removeDuplicates(array);
+
+        // Print the array without duplicates
+        System.out.println("Array without duplicates: " + Arrays.toString(uniqueArray));
+    }
+
+    // Method to remove duplicates while maintaining order
+    public static int[] removeDuplicates(int[] array) {
+        // Create a LinkedHashSet to preserve insertion order
+        Set<Integer> set = new LinkedHashSet<>();
+
+        // Add elements of the array to the Set (duplicates will be automatically removed)
+        for (int num : array) {
+            set.add(num);
+        }
+
+        // Convert the Set back to an array
+        int[] uniqueArray = new int[set.size()];
+        int i = 0;
+        for (int num : set) {
+            uniqueArray[i++] = num;
+        }
+
+        return uniqueArray;
+    }
+}
+23
+
+public class RotateArray {
+    public static void main(String[] args) {
+        // Example array
+        int[] array = {1, 2, 3, 4, 5, 6, 7};
+        int rotateBy = 3; // Number of positions to rotate
+
+        // Rotate the array
+        rotateArray(array, rotateBy);
+
+        // Print the rotated array
+        System.out.println("Rotated array: " + Arrays.toString(array));
+    }
+
+    // Method to rotate the array to the right by a given number of positions
+    public static void rotateArray(int[] array, int rotateBy) {
+        int n = array.length;
+
+        // Normalize the rotation count to handle cases where rotateBy > n
+        rotateBy = rotateBy % n; // In case rotateBy is larger than array length
+
+        if (rotateBy == 0) {
+            return; // No rotation needed
+        }
+
+        // Reverse the whole array
+        reverse(array, 0, n - 1);
+
+        // Reverse the first 'rotateBy' elements
+        reverse(array, 0, rotateBy - 1);
+
+        // Reverse the remaining elements
+        reverse(array, rotateBy, n - 1);
+    }
+
+    // Helper method to reverse a part of the array
+    public static void reverse(int[] array, int start, int end) {
+        while (start < end) {
+            // Swap the elements
+            int temp = array[start];
+            array[start] = array[end];
+            array[end] = temp;
+
+            start++;
+            end--;
+        }
+    }
+}
+24
+
+public class ReverseArray {
+    public static void main(String[] args) {
+        // Example array
+        int[] array = {1, 2, 3, 4, 5, 6, 7};
+
+        // Reverse the array
+        reverseArray(array);
+
+        // Print the reversed array
+        System.out.println("Reversed array: " + Arrays.toString(array));
+    }
+
+    // Method to reverse the array without using another array
+    public static void reverseArray(int[] array) {
+        int start = 0;
+        int end = array.length - 1;
+
+        // Swap the elements until the two pointers meet
+        while (start < end) {
+            // Swap the elements at the start and end
+            int temp = array[start];
+            array[start] = array[end];
+            array[end] = temp;
+
+            // Move the pointers towards the middle
+            start++;
+            end--;
+        }
+    }
+}
+25
+
+public class SecondLargestElement {
+    public static void main(String[] args) {
+        // Example array
+        int[] array = {10, 20, 4, 45, 99, 1};
+
+        // Find the second largest element
+        int secondLargest = findSecondLargest(array);
+
+        // Print the second largest element
+        System.out.println("The second largest element is: " + secondLargest);
+    }
+
+    // Method to find the second largest element
+    public static int findSecondLargest(int[] array) {
+        // Edge case: if the array has fewer than two elements, return -1 or an error message
+        if (array.length < 2) {
+            System.out.println("Array doesn't have enough elements.");
+            return -1;
+        }
+
+        int largest = Integer.MIN_VALUE; // Initialize the largest element as the smallest possible integer
+        int secondLargest = Integer.MIN_VALUE; // Initialize the second largest element
+
+        // Iterate through the array to find the largest and second largest elements
+        for (int num : array) {
+            if (num > largest) {
+                secondLargest = largest; // Update second largest
+                largest = num; // Update largest
+            } else if (num > secondLargest && num != largest) {
+                secondLargest = num; // Update second largest if num is smaller than largest but greater than second largest
+            }
+        }
+
+        // If second largest is still Integer.MIN_VALUE, it means no second largest was found
+        if (secondLargest == Integer.MIN_VALUE) {
+            System.out.println("There is no second largest element.");
+            return -1;
+        }
+
+        return secondLargest;
+    }
+}
+26
+public class MissingNumber {
+    public static void main(String[] args) {
+        // Example array with one missing number
+        int[] array = {1, 2, 4, 5, 6}; // The number 3 is missing
+
+        // Find the missing number
+        int missingNumber = findMissingNumber(array);
+
+        // Print the missing number
+        System.out.println("The missing number is: " + missingNumber);
+    }
+
+    // Method to find the missing number in the sequence
+    public static int findMissingNumber(int[] array) {
+        int n = array.length + 1; // The total number of elements if none were missing
+        int expectedSum = (n * (n + 1)) / 2; // Sum of first n natural numbers
+        int actualSum = 0;
+
+        // Calculate the actual sum of elements in the array
+        for (int num : array) {
+            actualSum += num;
+        }
+
+        // The missing number is the difference between the expected and actual sum
+        return expectedSum - actualSum;
+    }
+}
+27
+
+public class SortArray {
+    public static void main(String[] args) {
+        // Example array to be sorted
+        int[] array = {64, 25, 12, 22, 11};
+
+        // Sort the array in ascending order using Arrays.sort()
+        Arrays.sort(array);
+
+        // Print the sorted array
+        System.out.println("Sorted array: " + Arrays.toString(array));
+    }
+}
+28
+
+public class SortArrayDescending {
+    public static void main(String[] args) {
+        // Example array to be sorted
+        int[] array = {64, 25, 12, 22, 11};
+
+        // Sort the array in ascending order
+        Arrays.sort(array);
+
+        // Reverse the array to make it descending
+        reverseArray(array);
+
+        // Print the sorted array in descending order
+        System.out.println("Sorted array in descending order: " + Arrays.toString(array));
+    }
+
+    // Method to reverse the array
+    public static void reverseArray(int[] array) {
+        int start = 0;
+        int end = array.length - 1;
+
+        // Swap elements from the beginning and end to reverse the array
+        while (start < end) {
+            int temp = array[start];
+            array[start] = array[end];
+            array[end] = temp;
+
+            start++;
+            end--;
+        }
+    }
+}
+29
+ 
